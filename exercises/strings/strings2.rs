@@ -9,7 +9,7 @@
 
 fn main() {
     let word = String::from("green"); // Try not changing this line :)
-    if is_a_color_word(word) {
+    if is_a_color_word(&word) { //通过借用（borrowing）的方式将 String 类型转换为 &str，即字符串切片。
         println!("That is a color word I know!");
     } else {
         println!("That is not a color word I know.");

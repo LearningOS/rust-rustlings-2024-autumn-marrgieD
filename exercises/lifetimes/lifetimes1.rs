@@ -10,7 +10,7 @@
 
 // I AM NOT DONE
 
-fn longest(x: &str, y: &str) -> &str {
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str { //<'a> 是生命周期参数，表示一个引用的生命周期。
     if x.len() > y.len() {
         x
     } else {
