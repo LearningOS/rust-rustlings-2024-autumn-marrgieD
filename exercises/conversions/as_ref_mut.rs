@@ -15,9 +15,7 @@ fn byte_counter<T>(arg: T) -> usize
 where
     T: AsRef<str>,
 {
-    arg.as_ref().as_bytes().len() //T: AsRef<str>: 这一部分表示泛型参数 T 必须实现 AsRef<str> trait。AsRef<str> 是一个标准库中的 trait，表示可以将类型 T 引用为 &str，即 T 可以被转换为字符串引用。AsRef 提供了一个方法 as_ref()，用于将类型 T 转换为 &str。
-
-    arg.as_ref(): 这个调用会将 T 转换为 &str 类型，因为 T 实现了 AsRef<str>。
+    arg.as_ref().as_bytes().len() //T: AsRef<str>: 这一部分表示泛型参数 T 必须实现 AsRef<str> trait。AsRef<str> 是一个标准库中的 trait，表示可以将类型 T 引用为 &str，即 T 可以被转换为字符串引用。AsRef 提供了一个方法 as_ref()，用于将类型 T 转换为 &str。arg.as_ref(): 这个调用会将 T 转换为 &str 类型，因为 T 实现了 AsRef<str>。
 }
 
 // Obtain the number of characters (not bytes) in the given argument.
