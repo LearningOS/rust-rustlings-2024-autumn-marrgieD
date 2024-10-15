@@ -31,11 +31,13 @@
 
 extern "Rust" {
     fn my_demo_function(a: u32) -> u32;
+    #[link_name = "my_demo_function"]
     fn my_demo_function_alias(a: u32) -> u32;
 }
 
 mod Foo {
     // No `extern` equals `extern "Rust"`.
+    #[no_mangle] //防止 Rust 对该函数进行名称修饰（mangling），以便它可以被通过 extern 引用。
     fn my_demo_function(a: u32) -> u32 {
         a
     }

@@ -23,7 +23,7 @@ impl Licensed for SomeSoftware {}
 impl Licensed for OtherSoftware {}
 
 // YOU MAY ONLY CHANGE THE NEXT LINE
-fn compare_license_types(software: ??, software_two: ??) -> bool {
+fn compare_license_types<T: Licensed, U: Licensed>(software: T, software_two: U) -> bool { //T 和 U 是泛型参数，表示函数可以接受任意类型。trait bounds (T: Licensed)：泛型 T 和 U 必须实现 Licensed trait，这样我们就可以在函数内部调用 licensing_info 方法。
     software.licensing_info() == software_two.licensing_info()
 }
 

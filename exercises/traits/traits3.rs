@@ -11,7 +11,9 @@
 // I AM NOT DONE
 
 pub trait Licensed {
-    fn licensing_info(&self) -> String;
+    fn licensing_info(&self) -> String {
+        String::from("Some information") //表达式无;，语句(执行操作)有;
+    }
 }
 
 struct SomeSoftware {

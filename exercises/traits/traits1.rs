@@ -9,12 +9,15 @@
 
 // I AM NOT DONE
 
-trait AppendBar {
+trait AppendBar { //trait AppendBar 定义了一个通用的行为，即类型应该能够追加 "Bar" 字符串。
     fn append_bar(self) -> Self;
 }
 
-impl AppendBar for String {
+impl AppendBar for String { //实现了这个行为，具体对 String 类型进行了实现
     // TODO: Implement `AppendBar` for type `String`.
+    fn append_bar(self) -> Self {
+        format!("{}Bar", self)
+    }    
 }
 
 fn main() {
