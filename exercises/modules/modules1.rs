@@ -11,7 +11,7 @@ mod sausage_factory {
         String::from("Ginger")
     }
 
-    fn make_sausage() {
+    pub fn make_sausage() { //声明成公有，上边就是私有
         get_secret_recipe();
         println!("sausage!");
     }

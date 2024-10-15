@@ -44,6 +44,27 @@ impl Default for Person {
 
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
+        if s.is_empty(){
+            return Person::default();
+        }
+        let parts: Vec<&str> = s.split(',').collect();
+        // 如果没有正确分割为两部分，返回默认 Person
+        if parts.len() != 2 {
+            return Person::default();
+        }
+        let name = parts[0].trim();  // 提取并修剪名称
+        if name.is_empty() {
+            return Person::default();
+        }
+
+        // 尝试解析年龄为 usize，如果失败返回默认 Person
+        match parts[1].trim().parse::<usize>()  {
+            Ok(age) => Person {
+                name: name.to_string(),
+                age,
+            },
+            Err(_) => Person::default(),
+        }
     }
 }
 

@@ -13,7 +13,7 @@ mod tests {
         let optional_target = Some(target);
 
         // TODO: Make this an if let statement whose value is "Some" type
-        word = optional_target {
+        if let Some(word)= optional_target { //通过 if let 来解构 Option 类型，只在 optional_target 是 Some 的情况下执行代码块内容。
             assert_eq!(word, target);
         }
     }
@@ -32,7 +32,7 @@ mod tests {
         // TODO: make this a while let statement - remember that vector.pop also
         // adds another layer of Option<T>. You can stack `Option<T>`s into
         // while let and if let.
-        integer = optional_integers.pop() {
+        while let Some(Some(integer))  = optional_integers.pop() { //使用 while let 来不断地从 optional_integers 向量中弹出值。由于 pop() 方法返回 Option<T>，向量中的元素本身是 Option<i8>，所以这里需要解构两层 Option (Some(Some(integer)))。
             assert_eq!(integer, cursor);
             cursor -= 1;
         }
