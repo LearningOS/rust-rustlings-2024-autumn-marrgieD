@@ -34,9 +34,8 @@ where
     T: AsRef<str>,
 {
     // TODO: Implement the function body.
-    *arg.as_mut() *= *arg.as_mut(); //左侧: *arg.as_mut()，表示获取 arg 所引用的值（通过可变引用）。
-
-
+    *arg.as_mut() *= *arg.as_mut(); 
+    //左侧: *arg.as_mut()，表示获取 arg 所引用的值（通过可变引用）。
 }
 
 #[cfg(test)]
