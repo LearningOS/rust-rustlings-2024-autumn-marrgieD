@@ -32,7 +32,7 @@ pub fn capitalize_words_vector(words: &[&str]) -> Vec<String> {
 // Return a single string.
 // ["hello", " ", "world"] -> "Hello World"
 pub fn capitalize_words_string(words: &[&str]) -> String {
-    String::new()
+    String::new();
     words.iter().map(|&word| capitalize_first(word)).collect::<String>() //用 collect::<String>() 来将结果直接拼接成一个单一的字符串。
 }
 

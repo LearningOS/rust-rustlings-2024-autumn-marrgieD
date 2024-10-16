@@ -42,7 +42,7 @@ mod tests {
             name:String::from("Hacker in Rust"),
             count: 1,
             ..order_template // 其余字段和 order_template 保持一致
-        }
+        };
         assert_eq!(your_order.name, "Hacker in Rust");
         assert_eq!(your_order.year, order_template.year);
         assert_eq!(your_order.made_by_phone, order_template.made_by_phone);
